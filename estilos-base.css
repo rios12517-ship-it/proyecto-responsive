@@ -134,15 +134,17 @@ h1 {
 }
 
 .ilustracion {
-  position: relative;
-  width: 390px;
-  height: 280px;
+    position: relative;
+  width: 100%;
+  min-height: 17.5rem;
+  aspect-ratio: 1.4;
   display: grid;
   place-items: center;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: #28224f;
   color: white;
+
 }
 
 .planeta {
@@ -180,7 +182,7 @@ h1 {
 }
 
 .seccion {
-  margin: 88px 72px;
+  margin: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4.5rem)
 }
 
 .encabezado-seccion {
@@ -206,16 +208,18 @@ h1 {
 
 .rejilla-cursos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
 }
 
 .tarjeta {
-  min-height: 290px;
-  padding: 25px;
+    min-width: 0;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
   border: 1px solid #e7e8ef;
-  border-radius: 16px;
+  border-radius: 1rem;
   background: white;
+ 
 }
 
 .tarjeta-icono {
@@ -250,10 +254,8 @@ h1 {
 }
 
 .tarjeta > p:not(.categoria) {
-  min-height: 48px;
-  color: #687186;
+   color: #687186;
   line-height: 1.5;
-}
 
 .tarjeta > a {
   color: #5143c7;
