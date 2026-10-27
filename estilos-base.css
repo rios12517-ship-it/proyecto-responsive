@@ -277,12 +277,13 @@ h1 {
   line-height: 1.6;
 }
 
-.tabla-cursos {
-  width: 100%;
-  min-width: 42rem;
-  border-collapse: collapse;
-  background: white;
-  text-align: left;
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+.tabla-contenedor:focus-visible {
+  outline: 3px solid #5143c7;
+  outline-offset: 3px;
 }
 
 .tabla-cursos caption {
@@ -308,15 +309,15 @@ h1 {
 }
 
 .proyecto {
-  min-height: 220px;
-  margin: 0 72px 80px;
-  padding: 36px 48px;
+   margin: 0 clamp(1.25rem, 5vw, 4.5rem) clamp(4rem, 7vw, 5rem);
+  padding: clamp(1.75rem, 4vw, 3rem);
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 4.75rem minmax(0, 1fr) auto;
   align-items: center;
-  gap: 26px;
-  border-radius: 20px;
+  gap: clamp(1rem, 3vw, 2rem);
+  border-radius: 1.25rem;
   background: #242044;
+  color: white;
   color: white;
 }
 
@@ -353,13 +354,16 @@ h1 {
 }
 
 .pie {
-  min-height: 100px;
-  padding: 24px 72px;
+   min-height: 6.25rem;
+  padding: 1.5rem clamp(1.25rem, 5vw, 4.5rem);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem 2rem;
   border-top: 1px solid #e7e8ef;
   color: #687186;
+ 
 }
 
 .marca-pie {
@@ -368,4 +372,82 @@ h1 {
 
 .pie p {
   margin: 0;
+}
+
+  .portada {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .ilustracion {
+    min-height: 15rem;
+    aspect-ratio: 1.8;
+  }
+
+  .encabezado-seccion {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .rejilla-cursos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proyecto {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+
+  .proyecto .boton {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+   .encabezado {
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navegacion {
+    width: 100%;
+    justify-content: start;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .portada {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .ilustracion {
+    min-height: 13rem;
+  }
+
+  .seccion {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .rejilla-cursos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .proyecto {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .proyecto .boton {
+    grid-column: 1;
+  }
+
+  .pie {
+    align-items: start;
+    flex-direction: column;
+  }
 }
