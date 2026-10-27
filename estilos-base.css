@@ -14,7 +14,9 @@ html {
 }
 
 body {
-  width: 1200px;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
   margin: 0 auto;
   background: #f7f8fc;
 }
@@ -37,11 +39,12 @@ a {
 }
 
 .encabezado {
-  height: 88px;
-  padding: 0 72px;
+  min-height: 5.5rem;
+  padding: 1rem clamp(1.25rem, 5vw, 4.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .marca {
@@ -75,14 +78,14 @@ a {
 }
 
 .portada {
-  min-height: 420px;
-  margin: 0 72px;
-  padding: 50px 70px;
+  min-height: 26rem;
+  margin: 0 clamp(1.25rem, 5vw, 4.5rem);
+  padding: clamp(2rem, 5vw, 4rem);
   display: grid;
-  grid-template-columns: 1fr 390px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
   align-items: center;
-  gap: 50px;
-  border-radius: 24px;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  border-radius: 1.5rem;
   background: #eeecff;
 }
 
@@ -109,7 +112,7 @@ p {
 h1 {
   max-width: 490px;
   margin-bottom: 1rem;
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.05;
 }
 
